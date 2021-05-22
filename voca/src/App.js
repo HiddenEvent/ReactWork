@@ -1,4 +1,5 @@
 import './App.css';
+import Bottom from './component/Bottom';
 import Hellow from './component/Hellow';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <Hellow />
+      <Bottom />
     </div>
   );
 }
