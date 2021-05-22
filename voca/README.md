@@ -1,6 +1,7 @@
 # 프로젝트 생성
 
 - npx create-react-app voca
+- 테스트용
 
 # Getting Started with Create React App
 
