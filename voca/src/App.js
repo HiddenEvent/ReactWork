@@ -4,6 +4,8 @@ import DayList from './component/DayList';
 import Day from './component/Day';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import EmptyPage from './component/EmptyPage';
+import CreateWord from './component/CreateWord';
+import CreateDay from './component/CreateDay';
 
 function App() {
   return (
@@ -18,6 +20,13 @@ function App() {
           <Route path="/day/:day">
             <Day />
           </Route>
+          <Route path="/create_word">
+            <CreateWord />
+          </Route>
+          <Route path="/create_day">
+            <CreateDay />
+          </Route>
+
           {/* 모든 Route Path와 일치하지 않으면 emptyPage로 라우팅해준다. */}
           <Route>
             <EmptyPage />

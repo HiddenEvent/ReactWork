@@ -9,7 +9,6 @@ const Word = ({ word: w }) => {
     setIsShow(!isShow);
   }
   function togglsDone() {
-    // setIsDone(!isDone);
     fetch(`http://localhost:3001/words/${word.id}`, {
       method: 'PUT',
       headers: {
