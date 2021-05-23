@@ -6,7 +6,7 @@ const CreateDay = () => {
   const days = useFetch('http://localhost:3001/days');
   const history = useHistory();
 
-  function addDay(e) {
+  function addDay(e: React.FormEvent) {
     e.preventDefault();
 
     fetch(`http://localhost:3001/days`, {
