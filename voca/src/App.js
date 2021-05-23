@@ -7,9 +7,9 @@ function App() {
 
   return (
     <div className="App">
-      <Hellow />
-      <Hellow />
-      <Hellow />
+      <Hellow age={10} />
+      <Hellow age={20} />
+      <Hellow age={30} />
       <Bottom />
     </div>
   );
