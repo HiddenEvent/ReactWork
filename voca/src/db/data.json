@@ -94,6 +94,13 @@
       "kor": "원숭이",
       "isDone": false,
       "id": 11
+    },
+    {
+      "day": "4",
+      "eng": "computer",
+      "kor": "컴퓨터",
+      "isDone": false,
+      "id": 12
     }
   ]
 }
