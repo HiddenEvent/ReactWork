@@ -8,6 +8,8 @@ function App() {
   return (
     <div className="App">
       <Hellow />
+      <Hellow />
+      <Hellow />
       <Bottom />
     </div>
   );
