@@ -1,27 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import dummy from '../db/data.json';
 
 const DayList = () => {
   const [days, setDays] = useState([]);
-  const [count, setCount] = useState(0);
 
+  // api 호출
   useEffect(() => {
-    console.log('change Count');
+    fetch('http://localhost:3001/days')
+      .then((res) => {
+        // res = http응답 객체를 뜻함
+        return res.json(); // http응답 객체를 json으로 변환
+      })
+      .then((data) => {
+        setDays(data);
+      });
   }, []);
-
-  function countClick() {
-    setCount(count + 1);
-  }
-  function countClick2() {
-    setDays([
-      ...days,
-      {
-        id: Math.random(),
-        day: 1,
-      },
-    ]);
-  }
 
   return (
     <ul className="list_day">
@@ -30,8 +23,6 @@ const DayList = () => {
           <Link to={`/day/${day.day}`}>Day {day.day}</Link>
         </li>
       ))}
-      <button onClick={countClick2}>DayChange</button>
-      <button onClick={countClick}>{count}</button>
     </ul>
   );
 };

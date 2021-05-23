@@ -1,20 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import dummy from '../db/data.json';
 import Word from './Word';
 
 const Day = () => {
   // Pathvariable 값 가져오기
   const { day } = useParams();
+
   // 해당하는 Day와 일치 한것만 필터하기
-  const wordList = dummy.words.filter((word) => word.day === Number(day));
+
+  const [words, setWords] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/words?day=${day}`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setWords(data);
+      });
+  }, [day]);
 
   return (
     <>
       <h2>Day {day}</h2>
       <table>
         <tbody>
-          {wordList.map((word) => (
+          {words.map((word) => (
             <Word key={word.id} word={word} />
           ))}
         </tbody>
