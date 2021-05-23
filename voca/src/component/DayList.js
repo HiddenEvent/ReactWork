@@ -1,20 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import useFetch from '../hooks/useFetch';
 
 const DayList = () => {
-  const [days, setDays] = useState([]);
-
-  // api 호출
-  useEffect(() => {
-    fetch('http://localhost:3001/days')
-      .then((res) => {
-        // res = http응답 객체를 뜻함
-        return res.json(); // http응답 객체를 json으로 변환
-      })
-      .then((data) => {
-        setDays(data);
-      });
-  }, []);
+  const days = useFetch('http://localhost:3001/days');
 
   return (
     <ul className="list_day">
