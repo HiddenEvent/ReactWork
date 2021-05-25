@@ -14,6 +14,9 @@ const Header = () => {
         <Link className="link" to="/create_day">
           Day 추가
         </Link>
+        <Link className="link" to="/core_ui">
+          코어UI
+        </Link>
       </div>
     </div>
   );
