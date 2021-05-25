@@ -6,8 +6,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import EmptyPage from './component/EmptyPage';
 import CreateWord from './component/CreateWord';
 import CreateDay from './component/CreateDay';
-import CoreUi from './component/CoreUi';
-import './scss/style.scss';
 
 function App() {
   return (
@@ -28,10 +26,6 @@ function App() {
           <Route path="/create_day">
             <CreateDay />
           </Route>
-          <Route path="/core_ui">
-            <CoreUi />
-          </Route>
-
           {/* 모든 Route Path와 일치하지 않으면 emptyPage로 라우팅해준다. */}
           <Route>
             <EmptyPage />
