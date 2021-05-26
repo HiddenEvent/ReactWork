@@ -6,7 +6,7 @@ interface IProps {
 }
 
 const Header: FC<IProps> = ({ title }): ReactElement => {
-  return <div>{`title`}</div>;
+  return <div>{title}</div>;
 };
 
 export default Header;
