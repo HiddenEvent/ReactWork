@@ -173,3 +173,68 @@ console.log(bbb);
 bbb.start();
 
 ```
+
+# 함수
+
+```javascript
+// 함수
+function add1(num1: number, num2: number): number {
+  return num1 + num2;
+}
+
+function hello(name?: string) {
+  return `Hellow, ${name || 'world'}`; // args가 넘어오면 그대로 뿌리고 아니면 world를 출력하라
+}
+
+const result = hello();
+const result2 = hello('RichardKim');
+
+// default 값으로 world를 받겠다
+function hello2(name = 'world') {
+  return `Hello, ${name}`;
+}
+
+// ... 을 사용하면 전달된 매개 변수를 배열로 나타내게 할 수 있다.
+function add3(...nums: number[]) {
+  return nums.reduce((result, num) => result + num, 0);
+}
+add3(1, 2, 3);
+add3(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+interface User2 {
+  name: string;
+}
+
+// const Sam: User;
+const Sam: User2 = {
+  name: 'SamCall',
+};
+
+function showName(this: User2) {
+  console.log(this.name);
+}
+
+const z = showName.bind(Sam); // showName을 호출하고 this를 => Sam변수로 매칭 시킨다.
+z();
+
+interface User3 {
+  name: string;
+  age: number;
+}
+// 함수 오버로딩
+function join(name: string, age: string): string;
+function join(name: string, age: number): User3;
+function join(name: string, age: number | string): User3 | string {
+  if (typeof age === 'number') {
+    return {
+      name,
+      age,
+    };
+  } else {
+    return '나이는 숫자로 입력해주세요.';
+  }
+}
+
+const sam: User3 = join('Sam', 30);
+const jane: string = join('Jane', '30');
+```
