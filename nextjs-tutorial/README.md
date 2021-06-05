@@ -6,6 +6,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 npx create-next-app nextjs-tutorial
 ```
 
+- vscode 플러그인 설치
+  - auto import : 파일 생성 후 import를 자동으로 해준다
+
 ## 실행 명령어
 
 ```bash
@@ -26,3 +29,11 @@ yarn dev
 ```
 npm install --save-dev typescript @types/react @types/node
 ```
+
+## Next.js 설명
+
+- pages 폴더 밑에 .tsx 파일을 만들면 해당 파일명으로 라우팅 기능이 가능하다
+- 동적 라우팅 기능
+  - view라는 폴더를 만들고 동적으로 받을 변수명 파일을 생성 한다
+  - [id].tsx
+  - http://localhost:3000/view/12315
