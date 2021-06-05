@@ -30,10 +30,26 @@ yarn dev
 npm install --save-dev typescript @types/react @types/node
 ```
 
-## Next.js 설명
+## Next.js 구조 설명
 
-- pages 폴더 밑에 .tsx 파일을 만들면 해당 파일명으로 라우팅 기능이 가능하다
-- 동적 라우팅 기능
-  - view라는 폴더를 만들고 동적으로 받을 변수명 파일을 생성 한다
+- **pages** : 폴더 밑에 .tsx 파일을 만들면 해당 파일명으로 라우팅 기능이 가능하다
+- **view** : 동적 라우팅 기능
+  - **view** 라는 폴더를 만들고 동적으로 받을 변수명 파일을 생성 한다
   - [id].tsx
   - http://localhost:3000/view/12315
+- **public** : image등 정적 파일이 존재하는 곳
+  - 이미지 호출 시 public은 제외한 루트 url => /images
+
+## semantic UI 설치
+
+- https://react.semantic-ui.com/
+
+```
+npm install semantic-ui-react semantic-ui-css
+```
+
+- \_app.tsx 파일에 import 시키기
+
+```
+import 'semantic-ui-css/semantic.min.css'
+```
