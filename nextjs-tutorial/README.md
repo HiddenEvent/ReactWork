@@ -57,3 +57,9 @@ npm install semantic-ui-react semantic-ui-css
 ```
 import 'semantic-ui-css/semantic.min.css'
 ```
+
+## axios 설치
+
+```
+npm i axios
+```
