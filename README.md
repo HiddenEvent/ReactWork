@@ -238,3 +238,73 @@ function join(name: string, age: number | string): User3 | string {
 const sam: User3 = join('Sam', 30);
 const jane: string = join('Jane', '30');
 ```
+
+# 리터럴, 유니온 / 교차타입
+
+```javascript
+// 리터럴 타입
+
+const userName1 = 'Bob';
+let userName2: string | number = 'Tom';
+
+userName2 = 3;
+
+type Job = 'plice' | 'developer' | 'teacher';
+
+interface User4 {
+  name: string;
+  job: Job;
+}
+
+const user3: User4 = {
+  name: 'Bob',
+  job: 'student',
+};
+
+interface HightSchoolStudent {
+  name: number | string;
+  grade: 1 | 2 | 3;
+}
+
+interface Car2 {
+  name: 'car';
+  color: string;
+  start(): void;
+}
+
+interface Mobile2 {
+  name: 'mobile';
+  color: string;
+  call(): void;
+}
+
+function getGift(gift: Car2 | Mobile2) {
+  console.log(gift.color);
+
+  /* 식별 가능한 유니온 타입 예제 */
+  if (gift.name === 'car') {
+    gift.start();
+  } else {
+    gift.call();
+  }
+}
+
+// 인터섹션 타입
+interface Car3 {
+  name: string;
+  strart(): void;
+}
+
+interface Toy3 {
+  name: string;
+  color: string;
+  price: number;
+}
+
+const toyCar: Toy3 & Car3 = {
+  name: '타요',
+  strart() {},
+  color: 'blue',
+  price: 1000,
+};
+```
