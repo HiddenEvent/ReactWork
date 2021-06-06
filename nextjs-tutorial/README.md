@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 # 설치
 
 ```
@@ -33,12 +31,18 @@ npm install --save-dev typescript @types/react @types/node
 ## Next.js 구조 설명
 
 - **pages** : 폴더 밑에 .tsx 파일을 만들면 해당 파일명으로 라우팅 기능이 가능하다
+  - **\_app.tsx** 기능 : 글로벌 css를 적용하거나, 프로젝트 컴포넌트 레이아웃을 잡는 용도로 사용
+  - **\_document.tsx** 기능 : 서버에서만 랜더링 되고, onclick 같은 이벤트들은 작동되지 않는다
 - **view** : 동적 라우팅 기능
   - **view** 라는 폴더를 만들고 동적으로 받을 변수명 파일을 생성 한다
   - [id].tsx
   - http://localhost:3000/view/12315
 - **public** : image등 정적 파일이 존재하는 곳
   - 이미지 호출 시 public은 제외한 루트 url => /images
+
+### next.js 사이트
+
+- https://nextjs.org/docs/getting-started
 
 ## semantic UI 설치
 

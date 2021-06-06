@@ -11,6 +11,9 @@ export default function Home() {
 
   return (
     <div className="container">
+      <Head>
+        <title>HOME | 리차드킴</title>
+      </Head>
       <div>
         <span>{text} 적용 완료</span>
       </div>
