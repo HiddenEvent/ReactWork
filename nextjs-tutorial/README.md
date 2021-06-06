@@ -34,9 +34,13 @@ npm install --save-dev typescript @types/react @types/node
   - **\_app.tsx** 기능 : 글로벌 css를 적용하거나, 프로젝트 컴포넌트 레이아웃을 잡는 용도로 사용
   - **\_document.tsx** 기능 : 서버에서만 랜더링 되고, onclick 같은 이벤트들은 작동되지 않는다
 - **view** : 동적 라우팅 기능
+
   - **view** 라는 폴더를 만들고 동적으로 받을 변수명 파일을 생성 한다
-  - [id].tsx
+  - [id].tsx => 괄호[] 안에 입력한 텍스트는 = Pathvarable명 (중요)
   - http://localhost:3000/view/12315
+  - https://nextjs.org/docs/routing/dynamic-routes 를 참고
+  - 누르면 값을 보내주어야 하기 때문에 nextLink 참고 https://nextjs.org/docs/api-reference/next/link
+
 - **public** : image등 정적 파일이 존재하는 곳
   - 이미지 호출 시 public은 제외한 루트 url => /images
 
