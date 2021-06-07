@@ -27,6 +27,7 @@ export default function Home() {
     <div className="container">
       <Head>
         <title>HOME | 리차드킴</title>
+        <meta name="description" content="리차드님의 홈입니다."></meta>
       </Head>
       {isLoding && (
         <div style={{ padding: '300px 0' }}>
