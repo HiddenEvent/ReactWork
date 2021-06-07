@@ -20,13 +20,14 @@ import Item from './../../src/component/Item';
 //   product_link: string;
 // }
 
-const Post = ({ item }) => {
+const Post = ({ item, name }) => {
   return (
     <>
       <Head>
         <title>{item.name}</title>
         <meta name="description" content={item.description}></meta>
       </Head>
+      {name} 환경입니다.
       {item && <Item item={item} />}
     </>
   );
@@ -44,6 +45,7 @@ export async function getServerSideProps(context: any) {
   return {
     props: {
       item: data,
+      name: process.env.name, //환경 변수 사용 부분 .env 파일에 있음
     },
   };
 }

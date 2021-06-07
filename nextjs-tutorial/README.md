@@ -88,3 +88,27 @@ npm i axios
 
 - 항상 최신 상태 유지
 - getServerSideProps
+
+# 에러페이지 작업
+
+- **page** 폴더 안에 404.tsx를 만들면 default로 에러페이지로 바로 보여줄 수 있다.
+- 서버에러 등 다른 에러 같은 경우 **\_error.tsx** 파일을 추가하여 따로 설정하여 보여주면 된다.
+
+# 환경변수 (Environment Variables) 사용법
+
+- **.env.development** : 개발 환경변수 파일
+- **.env.production** : 운영 환경변수 파일
+
+## 환경변수 파일 작성방법
+
+```javascript
+//node js
+process.env.변수명;
+
+//browser - index.tsx 참조
+process.env.NEXT_PUBLIC_변수명;
+```
+
+- **package.json** 에 설정되어 있음, **npm run dev** : 개발환경, **npm run build && npm run start** : 운영환경
+- 브라우저 내에 사용하는 변수를 환경변수로 사용할 수 있음
+- 환경별 분기 처리가 가능하다

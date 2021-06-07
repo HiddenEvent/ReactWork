@@ -25,8 +25,15 @@ const Gnb = () => {
       <Menu.Item name="home" active={activeItem === 'home'} onClick={goLink} />
       <Menu.Item
         name="about"
-        active={activeItem === 'About'}
+        active={activeItem === 'about'}
         onClick={goLink}
+      />
+      <Menu.Item
+        name="ConcatUs"
+        active={activeItem === 'concatus'}
+        onClick={() => {
+          router.push('/contact');
+        }}
       />
     </Menu>
   );
