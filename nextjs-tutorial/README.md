@@ -28,26 +28,6 @@ yarn dev
 npm install --save-dev typescript @types/react @types/node
 ```
 
-## Next.js 구조 설명
-
-- **pages** : 폴더 밑에 .tsx 파일을 만들면 해당 파일명으로 라우팅 기능이 가능하다
-  - **\_app.tsx** 기능 : 글로벌 css를 적용하거나, 프로젝트 컴포넌트 레이아웃을 잡는 용도로 사용
-  - **\_document.tsx** 기능 : 서버에서만 랜더링 되고, onclick 같은 이벤트들은 작동되지 않는다
-- **view** : 동적 라우팅 기능
-
-  - **view** 라는 폴더를 만들고 동적으로 받을 변수명 파일을 생성 한다
-  - [id].tsx => 괄호[] 안에 입력한 텍스트는 = Pathvarable명 (중요)
-  - http://localhost:3000/view/12315
-  - https://nextjs.org/docs/routing/dynamic-routes 를 참고
-  - 누르면 값을 보내주어야 하기 때문에 nextLink 참고 https://nextjs.org/docs/api-reference/next/link
-
-- **public** : image등 정적 파일이 존재하는 곳
-  - 이미지 호출 시 public은 제외한 루트 url => /images
-
-### next.js 사이트
-
-- https://nextjs.org/docs/getting-started
-
 ## semantic UI 설치
 
 - https://react.semantic-ui.com/
@@ -67,3 +47,44 @@ import 'semantic-ui-css/semantic.min.css'
 ```
 npm i axios
 ```
+
+## Next.js 구조 설명
+
+- **pages** : 폴더 밑에 .tsx 파일을 만들면 해당 파일명으로 라우팅 기능이 가능하다
+  - **\_app.tsx** 기능 : 글로벌 css를 적용하거나, 프로젝트 컴포넌트 레이아웃을 잡는 용도로 사용
+  - **\_document.tsx** 기능 : 서버에서만 랜더링 되고, onclick 같은 이벤트들은 작동되지 않는다
+- **view** : 동적 라우팅 기능
+
+  - **view** 라는 폴더를 만들고 동적으로 받을 변수명 파일을 생성 한다
+  - [id].tsx => 괄호[] 안에 입력한 텍스트는 = Pathvarable명 (중요)
+  - http://localhost:3000/view/12315
+  - https://nextjs.org/docs/routing/dynamic-routes 를 참고
+  - 누르면 값을 보내주어야 하기 때문에 nextLink 참고 https://nextjs.org/docs/api-reference/next/link
+
+- **public** : image등 정적 파일이 존재하는 곳
+  - 이미지 호출 시 public은 제외한 루트 url => /images
+
+## next.js 란
+
+- https://nextjs.org/docs/getting-started
+- Next js 모든 페이지 사전 렌더링 (Pre_rendering)
+- 더 좋은 퍼포먼스
+- 검색엔진최적화(SEO)
+
+1. 정적 생성
+2. Server Side Rendering (SSR, Dynamic Rendering)
+
+차이점은 언제 html 파일을 생성하는가
+
+### [정적 생성]
+
+- 프로젝트가 빌드하는 시점에 html 파일들이 생성
+- 모든 요청에 재사용
+- 퍼포먼스 이유로, 넥스트 js는 정적 생성을 권고
+- 정적 생성된 페이지들은 CDN에 캐시
+- getStaticProps / getStaticPaths
+
+### [서버사이드 렌더링]은 매 요청마다 html을 생성
+
+- 항상 최신 상태 유지
+- getServerSideProps
